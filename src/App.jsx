@@ -12,7 +12,7 @@ const [ searchTerm, setSearchTerm] = useState('');
         <header>
           <img src="./hero.png" alt="Hero Banner"/>
           <h1>Find <span className="text-gradient">Movies</span>
-          You'll Enjoy Without the Hustle
+          You will Enjoy Without the Hustle
           </h1>
         </header>
 
