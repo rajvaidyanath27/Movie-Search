@@ -1,8 +1,26 @@
-# React + Vite
+🤖 Introduction-
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+   Built with React.js for the user interface, Appwrite for the Trending Movies Algorithm, and styled with TailwindCSS. The platform offers a sleek and modern experience for browsing and discovering movies.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔋 Features-
+
+   👉 Browse All Movies: Explore a wide range of movies available on the platform.
+
+   👉 Search Movies: Easily search for specific movies using a search function.
+
+   👉 Trending Movies Algorithm: Displays trending movies based on a dynamic algorithm.
+
+   👉 Modern UI/UX: A sleek and user-friendly interface designed for a great experience.
+
+   👉 Responsiveness: Fully responsive design that works seamlessly across devices.
+
+⚙️ Tech Stack-
+
+   🚨React.js
+
+   🚨Appwrite
+
+   🚨Tailwind CSS
+
+🤖 Appwrite is an open-source backend server that helps developers build and scale web and mobile applications quickly. It provides essential features like authentication, databases, file storage, and cloud functions, all in one easy-to-use platform. With Appwrite, developers can focus on creating the front-end of their apps while relying on Appwrite for backend services.🤖
