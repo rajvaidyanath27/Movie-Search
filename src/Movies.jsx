@@ -10,11 +10,8 @@ const Movie = () => {
     return <div className="loading">Loading....</div>;
   }
 
- 
-
   return (
     <>
-      
       <section className="movie-page">
         <div className="grid grid-4-col">
           {movie
