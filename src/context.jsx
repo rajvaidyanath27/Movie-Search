@@ -1,27 +1,32 @@
+import React, { useState, createContext, useContext } from "react";
 
-import React, { useContext, useState } from "react";
-import useFetch from "./useFetch";
 
-const AppContext = React.createContext();
+const GlobalContext = createContext();
 
-const API_URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=titanic`
+export const useGlobalContext = () => {
+  return useContext(GlobalContext);
+};
 
-const AppProvider = ({ children }) => {
-  const [query, setQuery] = useState("hacker");
-  const { isLoading, isError, movie } = useFetch(`&s=${query}`);
+
+export const GlobalProvider = ({ children }) => {
+  const [query, setQuery] = useState("");
+  const [isError, setIsError] = useState({ show: false, msg: "" });
+
+  
+  const value = {
+    query,
+    setQuery,
+    isError,
+    setIsError,
+  };
 
   return (
-    <AppContext.Provider value={{ query, movie, setQuery, isLoading, isError }}>
+    <GlobalContext.Provider value={value}>
       {children}
-    </AppContext.Provider>
+    </GlobalContext.Provider>
   );
 };
 
-const useGlobalContext = () => {
-  return useContext(AppContext);
-};
-
-export { AppContext, AppProvider, useGlobalContext };
 
 
 // const API_URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=titanic`

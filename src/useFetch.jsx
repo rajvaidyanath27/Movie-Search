@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 
 
 export const API_URL = `https: //www.omdbapi.com/?&apikey=${process.env.REACT_APP_API_KEY}`;
-console.log(process.env.NODE_ENV); // Example to access environment variables
-
-
 
 const useFetch = (apiParams) => {
   const [isLoading, setIsLoading] = useState(true);
