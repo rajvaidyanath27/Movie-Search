@@ -1,23 +1,25 @@
 import React from "react";
-import {  Routes, Route } from "react-router-dom";  
-// import { GlobalProvider } from "./context";  
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Use BrowserRouter
+// import { GlobalProvider } from "./context";
+import { AppProvider } from "./context"; // Corrected import path
+import "./App.css";
+
+
 import Home from "./Home";
 import SingleMovie from "./SingleMovie";
-// import Search from "./Search";  
-// import "./App.css";
-import Error from "./Error";
+import Search from "./Search";  
+import "./App.css";
 
 const App = () => {
   return (
-    // <GlobalProvider>  
-      // <BrowserRouter>
+    <AppProvider>  
+      <Router> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="movie/:id" element={<SingleMovie />} />
-          <Route path='*' element={<Error />} />
         </Routes>
-      // </BrowserRouter>
-    // </GlobalProvider>
+      </Router>
+    </AppProvider>
   );
 };
 

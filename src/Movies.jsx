@@ -2,43 +2,37 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "./context";
 
-const imgUrl = "https://via.placeholder.com/200/200";
+const Movies = () => {
+  const { movie } = useGlobalContext();
 
-const Movie = () => {
-  const { movie, isLoading } = useGlobalContext();
-  if (isLoading) {
-    return <div className="loading">Loading....</div>;
+  console.log("Movies data:", movie); // Debugging log to check movie data
+
+  if (!movie || movie.length === 0) {
+    console.log("No movies found or movie array is empty."); // Debugging log for empty data
+    return <div className="no-movies">No movies found. Please try again later.</div>;
   }
 
   return (
     <>
       <section className="movie-page">
-        <div className="grid grid-4-col">
-          {movie
-            ? movie.map((curMovieElem) => {
-                const { imdbID, Title, Poster } = curMovieElem;
-                const movieName = Title.substring(0, 15);
-
-                return (
-                  <NavLink to={`movie/${imdbID}`} key={imdbID}>
-                    <div className="card">
-                      <div className="card-info">
-                        <h2>
-                          {movieName.length > 13
-                            ? `${movieName}...`
-                            : movieName}
-                        </h2>
-                        <img src={Poster === "N/A" ? imgUrl : Poster} alt="#" />
-                      </div>
-                    </div>
-                  </NavLink>
-                );
-              })
-            : ""}
+        <div className="container grid grid-4-col">
+          {movie.map((curMovie) => {
+            const { imdbID, Title, Poster } = curMovie;
+            return (
+              <NavLink to={`movie/${imdbID}`} key={imdbID}>
+                <div className="card">
+                  <div className="card-info">
+                    <h2>{Title}</h2>
+                    <img src={Poster} alt={imdbID} />
+                  </div>
+                </div>
+              </NavLink>
+            );
+          })}
         </div>
       </section>
     </>
   );
 };
 
-export default Movie;
+export default Movies;

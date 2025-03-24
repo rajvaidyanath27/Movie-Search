@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+// eslint-disable-next-line no-undef
 export const API_URL = `https://www.omdbapi.com/?&apikey=${process.env.REACT_APP_API_KEY}`;
 
 const useFetch = (apiParams) => {
@@ -20,6 +21,7 @@ const useFetch = (apiParams) => {
       } else {
         setIsError({ show: "true", msg: data.Error });
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       setIsError({ show: "true", msg: "An error occurred." });
     }
