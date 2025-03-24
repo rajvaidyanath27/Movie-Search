@@ -1,9 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Change this line
+// eslint-disable-next-line no-undef
 const API_KEY = process.env.REACT_APP_API_KEY || "MISSING_API_KEY";
 const API_URL = `https://www.omdbapi.com/?apikey=${API_KEY}`;
 
+// eslint-disable-next-line no-undef
 console.log("Loaded API Key:", process.env.REACT_APP_API_KEY); // Debugging log
 
 if (API_KEY === "MISSING_API_KEY") {
@@ -42,6 +44,7 @@ const [query, setQuery] = useState("titanic");
       console.log(error);
       setIsError({
         show: true,
+        // eslint-disable-next-line no-undef
         msg: data.Error,
       });
     }
@@ -60,4 +63,5 @@ const useGlobalContext = () => {
   return useContext(AppContext);
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { AppContext, AppProvider, useGlobalContext };
